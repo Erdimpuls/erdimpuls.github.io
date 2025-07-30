@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  </head>
+  <body>
+    <header style="text-align:center; padding: 1em;">
+      <img src="/assets/img/geophysik-icon2.png" alt="Logo" style="height:80px;">
+    </header>
+    
+    <body class="{{ page.body-class }}">
+
+  <main class="page-content {{ page.body-class }}">
+  {{ content }}
+</main>
+
+  </body>
+</html>

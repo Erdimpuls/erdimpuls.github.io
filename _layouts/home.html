@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <img src="/assets/img/geophysik-icon2.png" alt="Logo" style="width:100px; display:block; margin:auto;">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <h1>Willkommen bei {{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+  <nav class="main-nav">
+  <ul>
+    <li><a href="{{ "/" | relative_url }}">Start</a></li>
+    <li><a href="{{ "/about" | relative_url }}">Über mich</a></li>
+    <li><a href="{{ "/posts" | relative_url }}">Beiträge</a></li>
+    <li><a href="mailto:deinname@beispiel.de">Kontakt</a></li>
+  </ul>
+</nav>
+  {{ content }}
+  <ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="post-date">{{ post.date | date: "%d.%m.%Y" }}</span>
+    </li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>

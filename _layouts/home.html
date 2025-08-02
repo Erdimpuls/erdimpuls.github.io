@@ -6,8 +6,11 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <h1>Willkommen bei {{ site.title }}</h1>
+<header class="welcome-box">
+  <h1>Willkommen bei <span class="site-name">{{ site.title }}</span></h1>
   <p>{{ site.description }}</p>
+  <p>Dieser Blog begleitet meine Reise durch das Geophysikstudium – mit Erklärungen, Illustrationen und Geschichten aus der Welt der Naturkräfte.</p>
+</header>
   <nav class="main-nav">
   <ul>
     <li><a href="{{ "/" | relative_url }}">Start</a></li>
@@ -17,13 +20,11 @@
   </ul>
 </nav>
   {{ content }}
-  <ul class="post-list">
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="post-date">{{ post.date | date: "%d.%m.%Y" }}</span>
-    </li>
-  {% endfor %}
+  {% if page.collection == "posts" %}
+  <div class="back-button">
+    <a href="{{ "/" | relative_url }}">← Zurück</a>
+  </div>
+{% endif %}
 </ul>
 
 </body>
